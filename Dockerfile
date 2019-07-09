@@ -14,3 +14,6 @@ RUN cd /build/zhparser-master ; SCWS_HOME=/usr/local make && make install ; cd .
     && rm -rf zhparser-master
 RUN apt-get purge -y --auto-remove ca-certificates wget postgresql-server-dev-$PG_MAJOR make gcc
 ADD init.sql /docker-entrypoint-initdb.d/
+
+# docker build -t idu/postgresql:9.6 .
+# docker build -t idu/postgresql-zhparser:9.6 .
